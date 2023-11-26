@@ -1,0 +1,33 @@
+load data infile 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/speed2021_cleaned.csv'
+into table speed_monitoring
+fields terminated by ','
+enclosed by '"'
+lines terminated by '\n'
+ignore 1 rows
+(@a,@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l,@m,@n,@o,@p,@q,@r,@s,@t,@u,@v,@w,@x,@y,@z)
+SET timestamp = IF(@a = '', NULL, @a),
+measureID = IF(@b = '', NULL, @b),
+directionID = IF(@c = '', NULL, @c),
+speed = IF(@d = '', NULL, @d),
+time = IF(@e = '', NULL, @e),
+date = IF(@f = '', NULL, @f),
+dateAndTime = IF(@g = '', NULL, @g),
+measureBegin = IF(@h = '', NULL, @h),
+measureEnd = IF(@i = '', NULL, @i),
+zone = IF(@j = '', NULL, @j),
+location = IF(@k = '', NULL, @k),
+direction = IF(@l = '', NULL, @l),
+geoPoint = IF(@m = '', NULL, @m),
+violationRate = IF(@n = '', NULL, @n),
+speedV50 = IF(@o = '', NULL, @o),
+speedV85 = IF(@p = '', NULL, @p),
+street = IF(@q = '', NULL, @q),
+housNr = IF(@r = '', NULL, @r),
+vehicles = IF(@s = '', NULL, @s),
+vehicleLength = IF(@t = '', NULL, @t),
+metricsPerLocation = IF(@u = '', NULL, @u),
+svid = IF(@v = '', NULL, @v),
+hour = IF(@w = '', NULL, @w),
+violationDegree = IF(@x = '', NULL, @x),
+latitude = IF(@y = '', NULL, @y),
+longitude = IF(@z = '', NULL, @z);

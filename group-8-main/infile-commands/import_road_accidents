@@ -1,0 +1,44 @@
+load data infile 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/roadaccidents_cleaned.csv'
+into table road_accidents
+fields terminated by ','
+enclosed by '"'
+lines terminated by '\n'
+ignore 1 rows
+(@a,@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l,@m,@n,@o,@p,@q,@r,@s,@t,@u,@v,@w,@x,@y,@z,@aa,@ab,@ac,@ad,@ae,@af,@ag,@ah,@ai,@aj,@ak)
+SET geoPoint = IF(@a = '', NULL, @a),
+geoShape = IF(@b = '', NULL, @b),
+accidentID = IF(@c = '', NULL, @c),
+accidentDescription = IF(@d = '', NULL, @d),
+accidentDescriptionFr = IF(@e = '', NULL, @e),
+accidentDescriptionEn = IF(@f = '', NULL, @f),
+accidentSeverity = IF(@g = '', NULL, @g),
+accidentSeverityFr = IF(@h = '', NULL, @h),
+accidentSeverityEn = IF(@i = '', NULL, @i),
+pedestrianInvolvement = IF(@j = '', NULL, @j),
+bycicleInvolvement = IF(@k = '', NULL, @k),
+motocycleInvolvement = IF(@l = '', NULL, @l),
+streettypeDescription = IF(@m = '', NULL, @m),
+streettypeDescriptionFr = IF(@n = '', NULL, @n),
+streettypeDescriptionEn = IF(@o = '', NULL, @o),
+eastCoordinates = IF(@p = '', NULL, @p),
+northCoodrinates = IF(@q = '', NULL, @q),
+canton = IF(@r = '', NULL, @r),
+muncipalNumber = IF(@s = '', NULL, @s),
+accidentYear = IF(@t = '', NULL, @t),
+accidentMonth = IF(@u = '', NULL, @u),
+accidentMonth2 = IF(@v = '', NULL, @v),
+accidentMonthFr = IF(@w = '', NULL, @w),
+accidentMonthEn = IF(@x = '', NULL, @x),
+accidentDay = IF(@y = '', NULL, @y),
+accidentDayFr = IF(@z = '', NULL, @z),
+accidentDayEn = IF(@aa = '', NULL, @aa),
+accidentHour = IF(@ab = '', NULL, @ab),
+accidentDate = IF(@ac = '', NULL, @ac),
+accidentType = IF(@ad = '', NULL, @ad),
+accidentSeverityCategory = IF(@ae = '', NULL, @ae),
+streetType = IF(@af = '', NULL, @af),
+weekdayCode = IF(@ag = '', NULL, @ag),
+accidentHourNr = IF(@ah = '', NULL, @ah),
+aid = IF(@ai = '', NULL, @ai),
+latitude = IF(@aj = '', NULL, @aj),
+longitude = IF(@ak = '', NULL, @ak);

@@ -1,0 +1,21 @@
+load data infile 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/weather_withIndicator.csv'
+into table meteoblue_weather
+fields terminated by ','
+enclosed by '"'
+lines terminated by '\n'
+ignore 1 rows
+(@a,@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l,@m,@n)
+SET timestamp = IF(@a = '', NULL, @a),
+temperature = IF(@b = '', NULL, @b),
+sunshineDuration = IF(@c = '', NULL, @c),
+precipitation = IF(@d = '', NULL, @d),
+snowfall = IF(@e = '', NULL, @e),
+cloudcoverHigh = IF(@f = '', NULL, @f),
+cloudcoverMiddle = IF(@g = '', NULL, @g),
+cloudcoverLight = IF(@h = '', NULL, @h),
+windSpeed = IF(@i = '', NULL, @i),
+windDirection = IF(@j = '', NULL, @j),
+wcid = IF(@k = '', NULL, @k),
+date = IF(@l = '', NULL, @l),
+hour = IF(@m = '', NULL, @m),
+weatherIndicator = IF(@n = '', NULL, @n);

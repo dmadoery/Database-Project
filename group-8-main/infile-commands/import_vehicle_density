@@ -1,0 +1,12 @@
+load data infile 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/vehicle_density.csv'
+into table vehicle_density
+fields terminated by ','
+enclosed by '"'
+lines terminated by '\n'
+ignore 1 rows
+(@a,@b,@c,@d,@e)
+SET vdid = IF(@a = '', NULL, @a),
+date = IF(@b = '', NULL, @b),
+hour = IF(@c = '', NULL, @c),
+vehicleClass = IF(@d = '', NULL, @d),
+total = IF(@e = '', NULL, @e);

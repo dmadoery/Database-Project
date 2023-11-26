@@ -1,0 +1,34 @@
+load data infile 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/cycle_ped_cleaned.csv'
+into table cycle_pedestrian_transit
+fields terminated by ','
+enclosed by '"'
+lines terminated by '\n'
+ignore 1 rows
+(@a,@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l,@m,@n,@o,@p,@q,@r,@s,@t,@u,@v,@w,@x,@y,@z,@aa)
+SET zst_nr = IF(@a = '', NULL, @a),
+siteCode = IF(@b = '', NULL, @b),
+siteName = IF(@c = '', NULL, @c),
+dateTimeFrom = IF(@d = '', NULL, @d),
+dateTimeTo = IF(@e = '', NULL, @e),
+directionName = IF(@f = '', NULL, @f),
+laneCode = IF(@g = '', NULL, @g),
+laneName = IF(@h = '', NULL, @h),
+valuesApproved = IF(@i = '', NULL, @i),
+valuesEdited = IF(@j = '', NULL, @j),
+trafficType = IF(@k = '', NULL, @k),
+total = IF(@l = '', NULL, @l),
+year = IF(@m = '', NULL, @m),
+month = IF(@n = '', NULL, @n),
+day = IF(@o = '', NULL, @o),
+weekday = IF(@p = '', NULL, @p),
+hourFrom = IF(@q = '', NULL, @q),
+date = IF(@r = '', NULL, @r),
+timeFrom = IF(@s = '', NULL, @s),
+timeTo = IF(@t = '', NULL, @t),
+dayOfYear = IF(@u = '', NULL, @u),
+zst_id = IF(@v = '', NULL, @v),
+geoPoint = IF(@w = '', NULL, @w),
+cptid = IF(@x = '', NULL, @x),
+hour = IF(@y = '', NULL, @y),
+latitude = IF(@z = '', NULL, @z),
+longitude = IF(@aa = '', NULL, @aa);

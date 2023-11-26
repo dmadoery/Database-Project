@@ -1,0 +1,11 @@
+load data infile 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/vehicle transit.csv'
+into table vehicle_transit
+fields terminated by ';'
+enclosed by '"'
+lines terminated by '\n'
+ignore 1 rows
+(@a,@b,@c,@d)
+SET timestamp = IF(@a = '', NULL, @a),
+vehicleClass = IF(@b = '', NULL, @b),
+timestampText = IF(@c = '', NULL, @c),
+classificationIndex = IF(@d = '', NULL, @d);
